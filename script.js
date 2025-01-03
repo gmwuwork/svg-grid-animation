@@ -14,18 +14,27 @@ const getRandomPosition = () => {
 
 // console.log(getRandomPosition());
 
-let t1 = gsap.timeline();
+let tl = gsap.timeline();
 
 gsap.utils.toArray(".rect").forEach((rect) => {
-  
   const position = getRandomPosition();
   console.log("position", position);
   console.log("rect", rect);
-  
-  t1.set(rect, {
+
+  tl.set(rect, {
     attr: {
       x: position.x,
       y: position.y,
     },
   });
+});
+
+tl.to(".rect", {
+  opacity: 1,
+  duration: 1.5,
+  ease: "power2.out",
+  stagger: {
+    // stagger 屬性是用來設定動畫的延遲時間（delay）和間隔時間（interval）-> 每 3 秒後對下一個元素進行動畫。
+    amount: 3,
+  },
 });

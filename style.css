@@ -13,3 +13,9 @@
 svg {
   height: 100%;
 }
+
+.rect {
+  width: 150px;
+  height: 150px;
+  opacity: 0;
+}
