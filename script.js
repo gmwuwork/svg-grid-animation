@@ -13,3 +13,7 @@ const getRandomPosition = () => {
 };
 
 console.log(getRandomPosition());
+
+gsap.utils.toArray(".rect").forEach((rect) => {
+  console.log("rect", rect);
+});
