@@ -12,8 +12,20 @@ const getRandomPosition = () => {
   };
 };
 
-console.log(getRandomPosition());
+// console.log(getRandomPosition());
+
+let t1 = gsap.timeline();
 
 gsap.utils.toArray(".rect").forEach((rect) => {
+  
+  const position = getRandomPosition();
+  console.log("position", position);
   console.log("rect", rect);
+  
+  t1.set(rect, {
+    attr: {
+      x: position.x,
+      y: position.y,
+    },
+  });
 });
