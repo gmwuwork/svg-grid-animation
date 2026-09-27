@@ -8,7 +8,8 @@ const values = [0, 150, 300, 450, 600, 750, 900, 1050, 1200, 1350, 1500, 1650];
 const getRandomPosition = () => {
   return {
     x: values[Math.floor(Math.random() * values.length)],
-    y: values[Math.floor(Math.random() * (values.length - 6))], // -6 to never pick from the last 6 elements of the array (-6 表示從不從陣列的最後 6 個元素中選取，也就是 0, 150, 300, 450, 600, 750, 這幾個)
+    // 只從陣列前 6 個元素中隨機選取，也就是 0, 150, 300, 450, 600, 750
+    y: values[Math.floor(Math.random() * (values.length - 6))],
   };
 };
 
